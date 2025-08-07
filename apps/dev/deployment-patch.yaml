@@ -1,0 +1,7 @@
+# apps/dev/deployment-patch.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: globomantics-app
+spec:
+  replicas: 1

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: globomantics-service-account
+  namespace: globomantics
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: globomantics
+  name: globomantics-role
+rules:
+- apiGroups: [""]
+  resources: ["pods", "services"]
+  verbs: ["get", "list", "create", "update", "delete"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: globomantics-rolebinding
+  namespace: globomantics
+subjects:
+- kind: ServiceAccount
+  name: globomantics-service-account
+  namespace: globomantics
+roleRef:
+  kind: Role
+  name: globomantics-role
+  apiGroup: rbac.authorization.k8s.io 

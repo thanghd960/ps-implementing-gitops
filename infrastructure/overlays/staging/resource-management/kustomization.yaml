@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+patches:
+- path: quota-patch.yaml
+  target:
+    kind: ResourceQuota
+- path: limit-range-patch.yaml
+  target:
+    kind: LimitRange

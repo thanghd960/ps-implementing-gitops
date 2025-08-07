@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: globomantics-dev
+  labels:
+    environment: development
+    tier: development
+    team: engineering 

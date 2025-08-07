@@ -1,0 +1,12 @@
+# apps/prod/deployment-patch.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: globomantics-app
+spec:
+  replicas: 4
+  template:
+    spec:
+      containers:
+      - name: app
+        image: nginx:1.28

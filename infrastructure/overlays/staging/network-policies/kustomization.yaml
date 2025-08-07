@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+patches:
+- path: default-deny-patch.yaml
+  target:
+    kind: NetworkPolicy
+    name: default-deny-all
+- path: allow-internal-patch.yaml
+  target:
+    kind: NetworkPolicy
+    name: allow-internal-communication
