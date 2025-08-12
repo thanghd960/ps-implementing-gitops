@@ -4,4 +4,4 @@ kind: Deployment
 metadata:
   name: globomantics-app
 spec:
-  replicas: 3
+  replicas: 1
