@@ -6,15 +6,17 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/CodeWithPraveen/ps-implementing-gitops.git
+    repoURL: git@github.com:thanghd960/ps-implementing-gitops.git
     targetRevision: HEAD
     path: apps/dev
   destination:
     server: https://kubernetes.default.svc
+    # config namespace
     namespace: globomantics-dev
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+    # allow create namespace
     syncOptions:
     - CreateNamespace=true
